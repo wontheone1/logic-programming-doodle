@@ -1,7 +1,9 @@
 (ns logic-programming.core-test
-  (:require [clojure.test :refer :all]
-            [logic-programming.core :refer :all]))
+  (:require [midje.sweet :refer :all]
+            [logic-programming.core :as core]
+            [clojure.core.logic :as log]))
 
-(deftest a-test
-  (testing "FIXME, I fail."
-    (is (= 0 1))))
+(fact
+  "ex1"
+  (log/run* [q]
+            (log/== q true)) => [true])
